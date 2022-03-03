@@ -1,9 +1,20 @@
 package com.gft.banco.digital;
 
-public class CheckingAccount {
+import lombok.Getter;
 
-    public int bankBranch;
-    public int number;
-    public double balance;
+@Getter
+public class CheckingAccount extends Account {
+
+
+    public CheckingAccount(Client client) {
+        super(client);
+    }
+
+    @Override
+    public void bankStatement() {
+        System.out.println("===Extrato Conta Corrente===");
+       super.defaultPrint();
+    }
+
 
 }

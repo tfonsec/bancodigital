@@ -1,11 +1,19 @@
 package com.gft.banco.digital;
 
+import lombok.Getter;
+
+@Getter
 public class SavingsAccount extends Account {
 
 
-    public int bankBranch;
-    public int number;
-    public double balance;
+    public SavingsAccount(Client client) {
+        super(client);
+    }
 
+    @Override
+    public void bankStatement() {
+        System.out.println("===Extrato Conta Poupança===");
+        super.defaultPrint();
+    }
 
 }
