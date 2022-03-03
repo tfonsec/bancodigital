@@ -6,8 +6,9 @@ import lombok.Getter;
 public class SavingsAccount extends Account {
 
 
-    public SavingsAccount(Client client) {
-        super(client);
+    public SavingsAccount(Client client, Bank bank) {
+        super(client, bank);
+
     }
 
     @Override

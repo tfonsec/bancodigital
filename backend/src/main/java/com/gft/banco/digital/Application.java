@@ -10,9 +10,11 @@ public class Application {
 
 		Client client = new Client();
 		client.setName("Thiago Fonseca");
-		Account cc = new CheckingAccount(client);
+		Bank bank = new Bank();
+		bank.setName("GFT Internet Banking");
+		Account cc = new CheckingAccount(client, bank);
 		cc.deposit(1000);
-		Account poupanca = new SavingsAccount(client);
+		Account poupanca = new SavingsAccount(client, bank);
 		cc.transfer(50, poupanca);
 
 

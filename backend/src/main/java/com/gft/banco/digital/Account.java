@@ -11,14 +11,16 @@ public abstract class Account implements IAccount {
     protected int number;
     protected double balance;
     protected Client client;
+    protected Bank bank;
 
 
 
 
-    public Account(Client client) {
+    public Account(Client client, Bank bank) {
         this.bankBranch = Account.DEFAULT_BANK_BRANCH;
         this.number = SEQUENCE ++;
         this.client = client;
+        this.bank = bank;
     }
 
 
@@ -40,6 +42,7 @@ public abstract class Account implements IAccount {
 
     protected void defaultPrint() {
         System.out.println(String.format("Titular: %s", this.client.getName()));
+        System.out.println(String.format("Banco: %s", this.bank.getName()));
         System.out.println(String.format("Agencia: %d", this.bankBranch));
         System.out.println(String.format("Número: %d", this.number));
         System.out.println(String.format("Saldo: %.2f", this.balance));
